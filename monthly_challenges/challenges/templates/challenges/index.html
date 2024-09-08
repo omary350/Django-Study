@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    {% load static %} 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Months Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+        <link rel="stylesheet" href="{% static "challenges/header.css" %}">         
+    </head>
+    <body>
+        {% include "challenges/includes/header.html" %} 
+        <ul>
+            {% for month in months %}
+                {% comment %} url is like the reverse function used in the views file {% endcomment %}
+                <li><a href="{% url "month-challenge" month %}"> {{month | title}}</a></li>
+            {% endfor %}
+        </ul>
+        <script src="" async defer></script>
+    </body>
+</html>
